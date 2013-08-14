@@ -1,0 +1,24 @@
+{% load compress %}
+
+<!DOCTYPE html>
+<html
+   <head>
+     {% block css %}
+     {% compress css %}
+     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
+     {% endcompress %}
+     {% endblock css %}
+   </head>
+
+   <body>
+   {% block body %}{% endblock body %}
+
+   {# javascript which will be used everywhere #}
+   {% compress js %}
+   <script type="text/javascript" src="{{ STATIC_URL }}js/vendor/jquery-2.0.3.js"></script>
+   <script type="text/javascript" src="{{ STATIC_URL }}js/vendor/bootstrap.js"></script>
+   <script type="text/javascript" src="{{ STATIC_URL }}js/vendor/knockout-2.3.0.js"></script>
+   {% endcompress %}
+   {% block javascript %}{% endblock base_javascript %}
+   </body>
+</html>
