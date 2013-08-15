@@ -124,6 +124,7 @@ INSTALLED_APPS = (
 
     'registration',
     'compressor',
+    'widget_tweaks',
 
     'accounts',
     'books',
